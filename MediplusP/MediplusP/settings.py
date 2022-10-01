@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'MediplusP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6nudhu4rfj5kh',
-        'USER': 'qxtjiulzfpqwji',
-        'PASSWORD': '723968cab32f42f0022cb02effdfa52429915ac97cf6f5bb50c226857df03f4b',
-        'HOST': 'ec2-3-219-135-162.compute-1.amazonaws.com',
+        'NAME': 'd2vssv4rlfrc4c',
+        'USER': 'rbaowsjfbuhpir',
+        'PASSWORD': '7418b5717131b57962e715b8cd538ca9439622ab4051381aa6ab2f13d58b7cb0',
+        'HOST': 'ec2-107-23-76-12.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -130,5 +130,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#import django_heroku
-#django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())

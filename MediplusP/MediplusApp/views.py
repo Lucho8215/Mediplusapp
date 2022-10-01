@@ -84,6 +84,29 @@ def lista_pacientes(request):
     else:
         return HttpResponseNotAllowed(['GET'], "Metodo invalido")
 
+def lista_medicos(request):
+    if request.method == 'GET':
+        datos = Medicos.objects.all()
+        if (not datos):
+            return HttpResponseBadRequest("No hay medicos en la base de datos")
+        info = []
+        for x in datos:
+            data = {
+                "Id_Medico": x.Id_Medico,
+                "Nombres": x.NomM,
+                "Apellidos": x.ApeM,
+                "Telefono": x.TelM,
+                "Especialidad": x.Especialidad
+                }
+            info.append(data)
+        dataJson = json.dumps(info)
+        resp = HttpResponse()
+        resp.headers['Content-Type'] = "text/json"
+        resp.content = dataJson
+        return resp
+    else:
+        return HttpResponseNotAllowed(['GET'], "Metodo invalido")
+
 def datos_paciente(request, numero):
     if request.method == 'GET':
         datos = Pacientes.objects.filter(Cedula = numero).first()
@@ -109,6 +132,26 @@ def datos_paciente(request, numero):
     else:
         return HttpResponseNotAllowed(['GET'],"Metodo Inválido")
 
+def actualizar_medico(request, numero):
+    if request.method == 'PUT':
+        try:
+            datos = Medicos.objects.filter(Id_Medico = numero).first()
+            if (not datos):
+                return HttpResponseBadRequest("No existe medico con ese codigo de identificacion")
+            
+            data = json.loads(request.body)  
+            datos.NomM = data["Nombres"]
+            datos.ApeM = data["Apellidos"]
+            datos.TelM = data["Telefono"]
+            datos.Especialidad = data["Especialidad"]
+            datos.save()
+            print(datos)
+            return HttpResponse("Datos de medico actualizados")
+        except:
+            return HttpResponseBadRequest("Error en los datos enviados")
+    else:
+        return HttpResponseNotAllowed(['PUT'], "Metodo invalido")
+
 def actualizar_paciente(request, numero):
     if request.method == 'PUT':
         try:
@@ -129,6 +172,19 @@ def actualizar_paciente(request, numero):
             datos.save()
             print(datos)
             return HttpResponse("Datos de paciente actualizados")
+        except:
+            return HttpResponseBadRequest("Error en los datos enviados")
+    else:
+        return HttpResponseNotAllowed(['PUT'], "Metodo invalido")
+
+def borrar_medico(request, numero):
+    if request.method == 'PUT':
+        try:
+            medico = Medicos.objects.filter(Id_Medico = numero)
+            if (not medico):
+                return HttpResponseBadRequest("No existe paciente con ese documento de identificacion")    
+            medico.delete()
+            return HttpResponse("Los datos del paciente fueron borrados")
         except:
             return HttpResponseBadRequest("Error en los datos enviados")
     else:
