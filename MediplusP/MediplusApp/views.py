@@ -134,7 +134,7 @@ def datos_paciente(request, numero):
 
 def datos_medico(request, numero):
     if request.method == 'GET':
-        datos = Medicos.objects.filter(Cedula = numero).first()
+        datos = Medicos.objects.filter(Id_Medico = numero).first()
         if (not datos):
             return HttpResponseBadRequest("El paciente con este documento no esta en la lista")
         data = {
