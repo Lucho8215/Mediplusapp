@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'MediplusP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2vssv4rlfrc4c',
-        'USER': 'rbaowsjfbuhpir',
-        'PASSWORD': '7418b5717131b57962e715b8cd538ca9439622ab4051381aa6ab2f13d58b7cb0',
-        'HOST': 'ec2-107-23-76-12.compute-1.amazonaws.com',
+        'NAME': 'd4t5r0qdqo9rqv',
+        'USER': 'achtemjslrsuqn',
+        'PASSWORD': '44d7a9d42074f74f6c9d546c6a2c09e5c87753e2937314a676af1714806a9a34',
+        'HOST': 'ec2-52-71-64-111.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

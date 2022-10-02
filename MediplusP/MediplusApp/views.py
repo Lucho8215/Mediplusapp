@@ -132,6 +132,27 @@ def datos_paciente(request, numero):
     else:
         return HttpResponseNotAllowed(['GET'],"Metodo Inválido")
 
+def datos_medico(request, numero):
+    if request.method == 'GET':
+        datos = Medicos.objects.filter(Cedula = numero).first()
+        if (not datos):
+            return HttpResponseBadRequest("El paciente con este documento no esta en la lista")
+        data = {
+                "Id_Medico": datos.Id_Medico,
+                "Nombres": datos.NomM,
+                "Apellidos": datos.ApeM,
+                "Telefono": datos.TelM,
+                "Especialidad": datos.Especialidad,
+                }
+        dataJson = json.dumps(data)
+        resp = HttpResponse()
+        resp.headers['Content-Type'] = "text/json"
+        resp.content = dataJson
+        return resp
+    else:
+        return HttpResponseNotAllowed(['GET'],"Metodo Inválido")
+
+
 def actualizar_medico(request, numero):
     if request.method == 'PUT':
         try:
@@ -140,10 +161,14 @@ def actualizar_medico(request, numero):
                 return HttpResponseBadRequest("No existe medico con ese codigo de identificacion")
             
             data = json.loads(request.body)  
-            datos.NomM = data["Nombres"]
-            datos.ApeM = data["Apellidos"]
-            datos.TelM = data["Telefono"]
-            datos.Especialidad = data["Especialidad"]
+            if 'Nombres' in data.keys(): 
+                datos.NomM = data["Nombres"]
+            if 'Apellidos' in data.keys(): 
+                datos.ApeM = data["Apellidos"]
+            if 'Telefono' in data.keys(): 
+                datos.Especialidad = data["Telefono"]
+            if 'Especialidad' in data.keys(): 
+                datos.Especialidad = data["Especialidad"]
             datos.save()
             print(datos)
             return HttpResponse("Datos de medico actualizados")
@@ -154,26 +179,35 @@ def actualizar_medico(request, numero):
 
 def actualizar_paciente(request, numero):
     if request.method == 'PUT':
-        try:
+        #try:
             datos = Pacientes.objects.filter(Cedula = numero).first()
             if (not datos):
                 return HttpResponseBadRequest("No existe paciente con ese documento de identificacion")
             
-            data = json.loads(request.body)  
-            datos.NomP = data["Nombres"]
-            datos.ApeP = data["Apellidos"]
-            datos.FechaNto = data["FechaNto"]
-            datos.Edad = data["Edad"]
-            datos.TelP = data["Telefono"]
-            datos.Direccion = data["Direccion"]
-            datos.Contacto = data["Contacto"]
-            datos.Parentezco = data["Parentezco"]
-            datos.TelC = data["Tel_Contacto"]
+            data = json.loads(request.body)
+            if 'Nombres' in data.keys():  
+                datos.NomP = data["Nombres"]
+            if 'Apellidos' in data.keys(): 
+                datos.ApeP = data["Apellidos"]
+            if 'FechaNto' in data.keys(): 
+                datos.FechaNto = data["FechaNto"]
+            if 'Edad' in data.keys(): 
+                datos.Edad = data["Edad"]
+            if 'Telefono' in data.keys(): 
+                datos.TelP = data["Telefono"]
+            if 'Direccion' in data.keys(): 
+                datos.Direccion = data["Direccion"]
+            if 'Contacto' in data.keys(): 
+                datos.Contacto = data["Contacto"]
+            if 'Parentezco' in data.keys(): 
+                datos.Parentezco = data["Parentezco"]
+            if 'Tel_Contacto' in data.keys(): 
+                datos.TelC = data["Tel_Contacto"]
             datos.save()
             print(datos)
             return HttpResponse("Datos de paciente actualizados")
-        except:
-            return HttpResponseBadRequest("Error en los datos enviados")
+        #except:
+            #return HttpResponseBadRequest("Error en los datos enviados")
     else:
         return HttpResponseNotAllowed(['PUT'], "Metodo invalido")
 
