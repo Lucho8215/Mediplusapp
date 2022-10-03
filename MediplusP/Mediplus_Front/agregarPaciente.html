@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIPLUS: Agregar Paciente</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="css/estilos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Imagenes/icono.png">
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="Imagenes/images.png" alt = "Logo">
+        <h1>Mediplus</h1>
+        <nav>
+            <a href="login.html"><button>Login</button></a>
+            <a href="agregarPaciente.html"><button>Agregar</button></a>
+        </nav>
+    </div>
+        
+    <div class="signUp_user" id="info">
+        <div class="container_signUp_user" id="formData">
+            <h2>Agregar Paciente</h2>
+            <form name="listap" method="post">
+                <input type="number" name="Cedula" placeholder="Numero de Identificacion" required>
+                <br>
+                <input type="text" name="NomP" placeholder="Nombres" required>
+                <br>
+                <input type="text" name="ApeP" placeholder="Apellidos" required>
+                <br>
+                <input type="text" name="FechaNto" placeholder="Fecha de Nacimiento" onfocus="(this.type='date')" required>
+                <br>
+                <input type="number" name="Edad" placeholder="Edad" required>
+                <br>
+                <input type="number" name="TelP" placeholder="Telefono" required>
+                <br>
+                <input type="text" name="Direccion" placeholder="Direccion" required>
+                <br>
+                <input type="text" name="Contacto" placeholder="Contacto" required>
+                <br>
+                <input type="text" name="Parentezco" placeholder="Parentesco" required>
+                <br>
+                <input type="number" name="TelC" placeholder="Telefono Contaco" required>
+                <br>
+                <input type="number" name="Id_Medico" placeholder="Codigo Medico encargado" required>
+                <br>
+                <br>
+                <input type="submit" value="Agregar">
+            </form>
+        </div>
+    </div>
+        
+    <footer>
+        <h2>Grupo 06 - Mintic</h2>
+    </footer>
+
+    <script src="js/agregarPaciente.js"></script>
+</body>
+</html>

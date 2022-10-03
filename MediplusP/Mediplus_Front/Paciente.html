@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIPLUS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="css/estilos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Imagenes/icono.png">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Mediplus</h1>
+        <img src="Imagenes/images.png" alt = "Logo">
+    </div>
+
+    <div class="main-component">
+        <h2>Busqueda de paciente por número de Cedula</h2>
+        <form>
+            <input type="text" id="cedula" name="cedula" placeholder="Ingrese Número de Cédula">
+        </form>
+        <br>
+            <input type="button" id="btnsubmit" value="Consultar" onclick="datosPaciente()">
+            <br>
+        <table id="info-pacientes">
+            <br>
+            <div id="cargando">Cargando...</div>
+        </table>
+    </div>
+        
+    <footer>
+        <h2>Grupo 06 - Mintic</h2>
+    </footer>
+
+    <script src="js/paciente.js"></script>
+</body>
+</html>
