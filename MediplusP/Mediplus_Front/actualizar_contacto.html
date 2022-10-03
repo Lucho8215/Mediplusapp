@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIPLUS:Actualizar Contacto</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="css/estilos4.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Imagenes/icono.png">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Mediplus</h1>
+        <nav>
+            <a href="index.html"><button>Salir</button></a>
+        </nav>
+    </div>
+        
+    <div class="signUp_user" id="info">
+        <div class="container_signUp_user" id="formData">
+            <h2>Actualización de datos</h2>
+            <h3>Ingrese el documento de identifiación</h3>            
+            <form >
+                <input type="text" id="actm" name="cedula" placeholder="Ingrese número de identifiación" onblur="datosPaciente()">
+            </form>
+            <h4>Solo ingrese los datos que desee cambiar</h4>
+            
+            <form name="actualizar" method="post">
+                <br>
+                <input type="text" id= "Contacto" name="Contacto" placeholder="Contacto" >
+                <br>
+                <input type="text" id= "Parentesco" name="Parentesco" placeholder="Parentesco" >
+                <br>
+                <input type="number" id= "TelC" name="TelC" placeholder="Telefono Contaco" >
+                <br>
+                <input type="submit" value="Actualizar información">
+                <input type="reset"value="Limpiar campos">
+            </form>
+        </div>
+    </div>
+
+    <script src="js/actualizar_contacto.js"></script>
+</body>
+</html>

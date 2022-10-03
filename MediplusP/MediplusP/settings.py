@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'MediplusP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd4t5r0qdqo9rqv',
+        'Database': 'd4t5r0qdqo9rqv',
         'USER': 'achtemjslrsuqn',
         'PASSWORD': '44d7a9d42074f74f6c9d546c6a2c09e5c87753e2937314a676af1714806a9a34',
         'HOST': 'ec2-52-71-64-111.compute-1.amazonaws.com',
