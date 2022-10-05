@@ -79,10 +79,10 @@ function datosp(med) {
         alert('Telefono no válida');
         return;
     }
-    result = validate_id(Id_Medico);
-    if (!result) {
-        alert('Cédula no es válida');
-        return;
+     result = validate_id(Id_Medico);
+           if (!result) {
+           alert('Cédula no es válida');
+           return;
     }
     
 

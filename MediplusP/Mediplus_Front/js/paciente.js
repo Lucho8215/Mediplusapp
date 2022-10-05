@@ -41,7 +41,8 @@ function conpac() {
     <th>Direccion</th>
     <th>Contacto</th>
     <th>Parentezco</th>
-    <th>Telefono Contacto</th>`;
+    <th>Telefono Contacto</th>
+    `;
   lisp.push(rotulos);
   //paciente.forEach((pac) => {
     const lis = document.createElement("tr");
@@ -56,6 +57,7 @@ function conpac() {
       <td>${paciente.Contacto}</td>
       <td>${paciente.Parentezco}</td>
       <td>${paciente.Tel_Contacto}</td>
+      
       `;
     lisp.push(lis);
   //});

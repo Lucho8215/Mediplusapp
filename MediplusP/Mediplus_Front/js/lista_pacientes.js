@@ -35,7 +35,9 @@ function conpac() {
     <th>Direccion</th>
     <th>Contacto</th>
     <th>Parentesco</th>
-    <th>Telefono Contacto</th>`;
+    <th>Telefono Contacto</th>
+    
+    `;
     
   lisp.push(rotulos);
 
@@ -52,6 +54,7 @@ function conpac() {
       <td>${pac.Contacto}</td>
       <td>${pac.Parentezco}</td>
       <td>${pac.Tel_Contacto}</td>
+     
       `;
     lisp.push(lis);
   });

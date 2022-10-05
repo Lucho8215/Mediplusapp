@@ -47,7 +47,7 @@ def agregar_paciente(request):
                 Contacto = data["Contacto"],
                 Parentezco = data["Parentezco"],
                 TelC = data["Tel_Contacto"],
-                Medico = tratante
+                Medico = tratante ["Medico"]
                             )
             paciente.save()
             return HttpResponse("Nuevo paciente agregado")

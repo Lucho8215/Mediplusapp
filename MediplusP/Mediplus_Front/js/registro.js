@@ -1,5 +1,5 @@
-//const datosPacienteUrl = 'https://mediplusapp.herokuapp.com/datosPaciente/';
-const datosPacienteUrl = 'http://127.0.0.1:8000/datosPaciente/';
+const datosPacienteUrl = 'https://mediplusapp.herokuapp.com/datosPaciente/';
+//const datosPacienteUrl = 'http://127.0.0.1:8000/datosPaciente/';
 
 paciente = [];
 
